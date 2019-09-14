@@ -5,6 +5,6 @@ import com.elyeproj.base.BaseRepository
 
 class FeatureOneDependent(val name: String, private val baseRepository: BaseRepository, private val baseNetwork: BaseNetwork) {
     override fun toString(): String {
-        return "FeatureOneDependent $name with\n$baseRepository and\n$baseNetwork"
+        return "FeatureOneDependent $name ${super.toString()}  with\n$baseRepository and\n$baseNetwork"
     }
 }
