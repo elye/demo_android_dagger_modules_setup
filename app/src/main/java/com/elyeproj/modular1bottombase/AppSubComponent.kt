@@ -1,15 +1,14 @@
 package com.elyeproj.modular1bottombase
 
-import com.elyeproj.base.ActivityScope
 import dagger.Subcomponent
 
-@Subcomponent(modules = [AppModelModule::class])
-interface AppSubComponentModel {
+@Subcomponent(modules = [AppDependentModule::class])
+interface AppSubComponent {
 
     fun inject(mainActivity: MainActivity)
 
     @Subcomponent.Builder
     interface Builder {
-        fun build(): AppSubComponentModel
+        fun build(): AppSubComponent
     }
 }

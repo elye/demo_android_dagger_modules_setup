@@ -6,8 +6,8 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class AppModelModule {
+class AppDependentModule {
     @Provides
     fun appModel(baseRepository: BaseRepository, baseNetwork: BaseNetwork) =
-        AppModel("from AppModelModule", baseRepository, baseNetwork)
+        AppDependent("from AppDependentModule", baseRepository, baseNetwork)
 }
