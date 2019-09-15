@@ -18,7 +18,6 @@ class FeatureTwoActivity : AppCompatActivity() {
         DaggerFeatureTwoComponent.builder()
             .baseComponent(BaseApplication.baseComponent)
             .build()
-            .featureTwoSubComponentModelBuilder.build()
             .inject(this)
 
         txt_result.text = "I have get my dependents from\n$featureTwoDependent"

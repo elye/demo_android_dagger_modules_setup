@@ -7,7 +7,7 @@ import com.elyeproj.base.BaseRepository
 import dagger.Component
 
 @ActivityScope
-@Component(dependencies = [BaseComponent::class])
+@Component(dependencies = [BaseComponent::class], modules = [FeatureTwoDependentModule::class])
 interface FeatureTwoComponent {
-    val featureTwoSubComponentModelBuilder: FeatureTwoSubComponent.Builder
+    fun inject(featureOneActivity: FeatureTwoActivity)
 }

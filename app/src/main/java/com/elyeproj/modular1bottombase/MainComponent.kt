@@ -5,7 +5,7 @@ import com.elyeproj.base.BaseComponent
 import dagger.Component
 
 @ActivityScope
-@Component(dependencies = [BaseComponent::class])
+@Component(dependencies = [BaseComponent::class], modules = [AppDependentModule::class])
 interface MainComponent {
-    val appSubComponentBuilder: AppSubComponent.Builder
+    fun inject(mainActivity: MainActivity)
 }
