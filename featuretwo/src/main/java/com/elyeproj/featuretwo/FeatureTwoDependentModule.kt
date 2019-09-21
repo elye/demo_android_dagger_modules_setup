@@ -9,5 +9,5 @@ import dagger.Provides
 class FeatureTwoDependentModule {
     @Provides
     fun appModel(baseRepository: BaseRepository, baseNetwork: BaseNetwork) =
-        FeatureTwoDependent("from FeatureOneDependentModule", baseRepository, baseNetwork)
+        FeatureTwoDependent("from FeatureTwoDependentModule", baseRepository, baseNetwork)
 }
