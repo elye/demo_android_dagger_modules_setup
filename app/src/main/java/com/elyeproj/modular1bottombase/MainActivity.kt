@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         DaggerMainComponent.builder()
             .baseComponent(BaseApplication.baseComponent)
+            .appDependentModule(AppDependentModule("first", "last"))
             .build()
             .inject(this)
 

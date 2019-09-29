@@ -8,4 +8,11 @@ import dagger.Component
 @Component(dependencies = [BaseComponent::class], modules = [AppDependentModule::class])
 interface MainComponent {
     fun inject(mainActivity: MainActivity)
+
+    @Component.Builder
+    interface Builder {
+        fun build(): MainComponent
+        fun appDependentModule(appDependentModule: AppDependentModule): Builder
+        fun baseComponent(baseComponent: BaseComponent): Builder
+    }
 }
