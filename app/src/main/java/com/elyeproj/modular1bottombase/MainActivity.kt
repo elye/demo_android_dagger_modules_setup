@@ -3,7 +3,6 @@ package com.elyeproj.modular1bottombase
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.elyeproj.base.BaseApplication
 import com.elyeproj.featureone.FeatureOneActivity
 import com.elyeproj.featuretwo.FeatureTwoActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,11 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DaggerMainComponent.builder()
-            .baseComponent(BaseApplication.baseComponent)
-            .appDependentModule(AppDependentModule("first", "last"))
-            .build()
-            .inject(this)
+        (application as MainApplication).component.inject(this)
 
         txt_result.text = "I have get my dependents from\n$appDependent"
 
